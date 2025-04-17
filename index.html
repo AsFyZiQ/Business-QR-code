@@ -6,36 +6,51 @@
   <title>BIBD Number Copy</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       text-align: center;
       padding: 40px;
-      background-color: #f4f4f4;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     img.logo {
-      max-width: 150px;
-      margin-bottom: 20px;
+      max-width: 250px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+    img.logo:hover {
+      transform: scale(1.1);
     }
     .bibd-container {
-      background-color: white;
-      padding: 30px 20px;
+      padding: 30px;
+      background-color: #ffffff;
       border-radius: 10px;
-      display: inline-block;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
     }
     .bibd-number {
-      font-size: 24px;
+      font-size: 28px;
       margin: 20px 0;
       font-weight: bold;
+      color: #333;
       letter-spacing: 1px;
     }
     button {
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 12px 24px;
+      font-size: 18px;
       cursor: pointer;
       background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
     }
     button:hover {
       background-color: #0056b3;
@@ -43,20 +58,30 @@
     .qr-code {
       margin-top: 40px;
     }
+    .qr-code img {
+      max-width: 250px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .qr-code img:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
 
-  <div class="bibd-container">
-    <img src="Dee.Haus Logo.png" alt="Logo" class="logo">
-    <p>Hereas's BIBD Number:</p>
-    <div class="bibd-number" id="bibdNumber">00012021488943</div>
-    <button onclick="copyBIBD()">Copy Number</button>
-  </div>
+  <div class="container">
+    <div class="bibd-container">
+      <img src="Dee.Haus Logo.png" alt="Logo" class="logo">
+      <p style="font-size: 18px; color: #555;">Here is your BIBD Number:</p>
+      <div class="bibd-number" id="bibdNumber">00012021488943</div>
+      <button onclick="copyBIBD()">Copy Number</button>
+    </div>
 
-  <div class="qr-code">
-    <p>Scan to visit this page:</p>
-    <img src="QR_Code.png" alt="QR Code">
+    <div class="qr-code">
+      <p style="font-size: 18px; color: #555;">Scan to visit this page:</p>
+      <img src="QR_Code.png" alt="QR Code">
+    </div>
   </div>
 
   <script>
