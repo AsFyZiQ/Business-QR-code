@@ -20,20 +20,24 @@
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
-    img.logo {
-      max-width: 250px;
-      margin-bottom: 30px;
-      transition: transform 0.3s ease;
-    }
-    img.logo:hover {
-      transform: scale(1.1);
-    }
     .bibd-container {
       padding: 30px;
       background-color: #ffffff;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       margin-bottom: 30px;
+    }
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    img.logo {
+      max-width: 250px;
+      transition: transform 0.3s ease;
+    }
+    img.logo:hover {
+      transform: scale(1.1);
     }
     .bibd-number {
       font-size: 28px;
@@ -72,7 +76,10 @@
 
   <div class="container">
     <div class="bibd-container">
-      <img src="Dee.Haus Logo.png" alt="Logo" class="logo">
+      <!-- Added a wrapper div for logo with flexbox centering -->
+      <div class="logo-container">
+        <img src="Dee.Haus Logo.png" alt="Logo" class="logo">
+      </div>
       <p style="font-size: 18px; color: #555;">Here is your BIBD Number:</p>
       <div class="bibd-number" id="bibdNumber">00012021488943</div>
       <button onclick="copyBIBD()">Copy Number</button>
