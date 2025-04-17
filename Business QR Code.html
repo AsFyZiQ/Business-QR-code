@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIBD Number Copy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f4f4f4;
+    }
+    img.logo {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+    .bibd-container {
+      background-color: white;
+      padding: 30px 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .bibd-number {
+      font-size: 24px;
+      margin: 20px 0;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .qr-code {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bibd-container">
+    <img src="Dee.Haus Logo.png" alt="Logo" class="logo">
+    <p>Hereas's BIBD Number:</p>
+    <div class="bibd-number" id="bibdNumber">00012021488943</div>
+    <button onclick="copyBIBD()">Copy Number</button>
+  </div>
+
+  <div class="qr-code">
+    <p>Scan to visit this page:</p>
+    <img src="file:///C:/Users/AsFyZ/Desktop/IBTE%20Work/Business/QR%20Code/Business%20QR%20Code.html" alt="QR Code">
+  </div>
+
+  <script>
+    function copyBIBD() {
+      const number = document.getElementById("bibdNumber").innerText;
+      navigator.clipboard.writeText(number).then(() => {
+        alert("BIBD Number copied!");
+      });
+    }
+  </script>
+
+</body>
+</html>
