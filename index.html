@@ -59,6 +59,13 @@
     button:hover {
       background-color: #0056b3;
     }
+    #copyMsg {
+      display: none;
+      color: green;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 16px;
+    }
     .qr-code {
       margin-top: 40px;
     }
@@ -70,19 +77,33 @@
     .qr-code img:hover {
       transform: scale(1.05);
     }
+
+    @media (max-width: 500px) {
+      .bibd-number {
+        font-size: 22px;
+      }
+      button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+      img.logo,
+      .qr-code img {
+        max-width: 90%;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <div class="bibd-container">
-      <!-- Added a wrapper div for logo with flexbox centering -->
       <div class="logo-container">
         <img src="Dee.Haus Logo.png" alt="Logo" class="logo">
       </div>
-      <p style="font-size: 18px; color: #555;">Hereas's BIBD Number:</p>
+      <p style="font-size: 18px; color: #555;">Here's the BIBD Number:</p>
       <div class="bibd-number" id="bibdNumber">00012021488943</div>
       <button onclick="copyBIBD()">Copy Number</button>
+      <div id="copyMsg">Number Copied!!</div>
     </div>
 
     <div class="qr-code">
@@ -95,7 +116,11 @@
     function copyBIBD() {
       const number = document.getElementById("bibdNumber").innerText;
       navigator.clipboard.writeText(number).then(() => {
-        alert("BIBD Number copied!");
+        const msg = document.getElementById("copyMsg");
+        msg.style.display = "block";
+        setTimeout(() => {
+          msg.style.display = "none";
+        }, 2000);
       });
     }
   </script>
